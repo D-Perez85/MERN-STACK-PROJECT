@@ -8,7 +8,6 @@ const crearCarro = (req, res) => {
 	ordenes.guardar(productos);
     res.status(201).json({message: `CARRO creado exitosamente`}); 
 }
-
 //Borrar un producto de un carro
 const eliminarCarro = (req, res) => {
     const id = Number(req.params.id);
@@ -19,9 +18,12 @@ const eliminarCarro = (req, res) => {
 }
 //Obtener todos los productos de un carro especifico
 const obtenerProductos = (req, res) => {
-    res.status(200).json({message: `ORDEN de productos BY ID`}); 
+    const id = Number(req.params.id);
+	if (isNaN(id)) return res.status(400).send({ message: 'Ingresa el ID de la orden que desea listar' });
+	const ordenSeleccionada = ordenes.obtenerPorID(id);
+	if (ordenSeleccionada == null) return res.status(404).send({ message: 'Ingresa el ID de la orden que desea listar' });
+    res.json({ 'Orden': ordenSeleccionada});
 }
-
 //Agregar un producto a un carro
 const addProducto = (req, res) => {
 	res.status(201).json({message: `PRODUCTO agregado al carro exitosamente`})
