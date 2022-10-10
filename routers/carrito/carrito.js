@@ -1,22 +1,13 @@
 const {Router} = require('express'); 
+const { crearCarro, eliminarCarro, borrarProducto, obtenerProductos, addProducto } = require('../../controllers/carrito/carrito.api');
 const router = Router(); 
 
 /** Rutas iniciales */
 
-router.get('/', (req, res)=>{
-    res.status(200).json(`GET ALL Success`); 
-})
-router.get('/:id', (req, res)=>{
-    res.status(200).json(`GET BY ID Success`); 
-})
-router.post('/', (req, res)=>{
-    res.status(201).json(`POST Success`); 
-})
-router.put('/:id', (req, res)=>{
-    res.status(200).json(`PUT Success`); 
-})
-router.delete('/:id', (req, res)=>{
-    res.status(200).json(`DELETE Success`); 
-})
+router.post('/', crearCarro); 
+router.delete('/:id', eliminarCarro);
+router.get('/:id/productos', obtenerProductos);
+router.post('/:id/productos', addProducto); 
+router.delete('/:id/productos/:id', borrarProducto);
 
 module.exports = router;
