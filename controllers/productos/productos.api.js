@@ -10,7 +10,11 @@ const crearProducto = (req, res) => {
 
 //Obtener uno o todos los productos
 const obtenerProductos = (req, res) => {
-	res.status(200).json(`Lista de Productos / Producto by ID...`); 
+	if (req.params.id == undefined) return res.send(productos.obtener());
+	const id = Number(req.params.id);
+	const producto = productos.obtenerPorID(id);
+	if (!producto) return res.status(404).send({ message: `El ID ${id} no existe` });
+	res.status(200).json(producto); 
 }
 
 //Editar un producto

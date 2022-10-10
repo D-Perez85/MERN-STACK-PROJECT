@@ -33,7 +33,11 @@ class Contenedor {
 
     //Devuelve los objetos del archivo en un arreglo
     obtener() {
-       // TO DO
+        try {
+            return this.objetos;
+        } catch {
+            return [];
+        }
     }
 
     //Devuelve el objeto con el ID solicitado

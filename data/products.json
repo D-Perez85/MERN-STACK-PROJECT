@@ -18,5 +18,15 @@
     "stock": "23",
     "id": 2,
     "timestamp": 1665365732365
+  },
+  {
+    "nombre": "moto",
+    "descripcion": "roja",
+    "codigo": "04274",
+    "foto": "image",
+    "precio": "4321",
+    "stock": "23",
+    "id": 3,
+    "timestamp": 1665366351328
   }
 ]
