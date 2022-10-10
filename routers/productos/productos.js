@@ -1,21 +1,12 @@
 const {Router} = require('express'); 
+const { crearProducto, obtenerProductos, editarProducto, eliminarProducto } = require('../../controllers/productos/productos.api');
 const router = Router(); 
 
-/** Rutas iniciales */
-router.get('/', (req, res)=>{
-    res.status(200).json(`GET ALL Success`); 
-})
-router.get('/:id', (req, res)=>{
-    res.status(200).json(`GET BY ID Success`); 
-})
-router.post('/', (req, res)=>{
-    res.status(201).json(`POST Success`); 
-})
-router.put('/:id', (req, res)=>{
-    res.status(200).json(`PUT Success`); 
-})
-router.delete('/:id', (req, res)=>{
-    res.status(200).json(`DELETE Success`); 
-})
+/** Rutas parciales */
+
+router.get('/:id?', obtenerProductos);
+router.post('/', crearProducto); 
+router.put('/:id', editarProducto); 
+router.delete('/:id', eliminarProducto); 
 
 module.exports = router;
