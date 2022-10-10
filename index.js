@@ -4,6 +4,9 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const apiRoutes = require('./routers/app.router');
 
+// Middlewares
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 app.use('/api', apiRoutes); 
 
 /** Conexion a Server */

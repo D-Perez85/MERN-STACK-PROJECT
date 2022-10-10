@@ -1,7 +1,10 @@
 const Contenedor = require('../../models/productos');
+const productos =  new Contenedor('./data/products.json')
 
 //Crear Producto
 const crearProducto = (req, res) => {
+	const { nombre, descripcion, codigo, foto, precio, stock } = req.body;
+	productos.guardar({ nombre, descripcion, codigo, foto, precio, stock });
 	res.status(201).json(`Producto creado`); 
 }
 
