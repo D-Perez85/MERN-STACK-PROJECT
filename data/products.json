@@ -1,11 +1,11 @@
 [
   {
-    "nombre": "auto",
-    "descripcion": "blanco",
-    "codigo": "00234",
+    "nombre": "moto",
+    "descripcion": "blanca",
+    "codigo": "04274",
     "foto": "image",
-    "precio": "1234",
-    "stock": "432",
+    "precio": "4321",
+    "stock": "23",
     "id": 1,
     "timestamp": 1665365611646
   },
@@ -21,10 +21,10 @@
   },
   {
     "nombre": "moto",
-    "descripcion": "roja",
+    "descripcion": "verdolaga",
     "codigo": "04274",
     "foto": "image",
-    "precio": "4321",
+    "precio": "00721",
     "stock": "23",
     "id": 3,
     "timestamp": 1665366351328

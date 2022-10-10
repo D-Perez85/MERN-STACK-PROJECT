@@ -19,7 +19,6 @@ class Contenedor {
             console.log(err);
         }
     }
-
     //Genera un ID
     nuevoId() {
         try {
@@ -29,8 +28,6 @@ class Contenedor {
             console.log(err);
         }
     }
-
-
     //Devuelve los objetos del archivo en un arreglo
     obtener() {
         try {
@@ -39,7 +36,6 @@ class Contenedor {
             return [];
         }
     }
-
     //Devuelve el objeto con el ID solicitado
     obtenerPorID(id) {
         try {
@@ -50,10 +46,12 @@ class Contenedor {
         }
     }
     //Edita el objeto deseado con el ID solicitado
-    editar() {
-            // TO DO 
+    editar(id, data) {
+        const objetoAEditar = this.obtenerPorID(id);
+        const index = this.objetos.findIndex(objetoActual => objetoActual.id === objetoAEditar.id);
+        this.objetos[index] = { ...this.objetos[index], ...data };
+        this.writeData();
     }
-
     //Elimina el objeto deseado con el ID solicitado
     eliminar() {
             // TO DO 
