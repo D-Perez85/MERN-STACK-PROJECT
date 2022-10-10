@@ -42,9 +42,13 @@ class Contenedor {
 
     //Devuelve el objeto con el ID solicitado
     obtenerPorID(id) {
-        // TO DO
+        try {
+            const objeto = this.objetos.find(objetoActual => objetoActual.id === id);
+            return objeto ? objeto : null;
+        } catch (err) {
+            console.log(err);
+        }
     }
-
     //Edita el objeto deseado con el ID solicitado
     editar() {
             // TO DO 
