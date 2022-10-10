@@ -11,6 +11,10 @@ const crearCarro = (req, res) => {
 
 //Borrar un producto de un carro
 const eliminarCarro = (req, res) => {
+    const id = Number(req.params.id);
+	if (isNaN(id)) return res.status(400).send({ message: 'Ingresa el ID de la orden que desea eliminar' });
+	const ordenSeleccionada= ordenes.eliminar(id);
+	if (ordenSeleccionada=== -1) return res.status(404).json({ message: `El ID ${id} no existe` });
     res.status(200).json({message: `CARRO eliminado exitosamente`}); 
 }
 //Obtener todos los productos de un carro especifico
