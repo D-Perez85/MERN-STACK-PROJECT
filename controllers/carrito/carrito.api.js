@@ -1,7 +1,14 @@
+const Contenedor = require('../../models/productos');
+const ordenes =  new Contenedor('./data/ordenes.json');
+
 //Crear Carro de compras
 const crearCarro = (req, res) => {
+    const productos = req.body;
+	if (!productos) return ordenes.guardar([]);
+	ordenes.guardar(productos);
     res.status(201).json({message: `CARRO creado exitosamente`}); 
 }
+
 //Borrar un producto de un carro
 const eliminarCarro = (req, res) => {
     res.status(200).json({message: `CARRO eliminado exitosamente`}); 
