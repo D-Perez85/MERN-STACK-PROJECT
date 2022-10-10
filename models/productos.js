@@ -53,8 +53,15 @@ class Contenedor {
         this.writeData();
     }
     //Elimina el objeto deseado con el ID solicitado
-    eliminar() {
-            // TO DO 
+    eliminar(id) {
+        try {
+            let indexObj = this.objetos.findIndex(obj => obj.id === id);
+            if (indexObj === -1) return indexObj;
+            this.objetos.splice(indexObj, 1);
+            this.writeData();
+        } catch (err) {
+            console.log(err);
+        }
     }
 
     readData() {

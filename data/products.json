@@ -1,10 +1,10 @@
 [
   {
     "nombre": "moto",
-    "descripcion": "blanca",
+    "descripcion": "verdolaga",
     "codigo": "04274",
     "foto": "image",
-    "precio": "4321",
+    "precio": "00721",
     "stock": "23",
     "id": 1,
     "timestamp": 1665365611646
@@ -27,6 +27,6 @@
     "precio": "00721",
     "stock": "23",
     "id": 3,
-    "timestamp": 1665366351328
+    "timestamp": 1665367734006
   }
 ]
