@@ -7,16 +7,60 @@
     "precio": "4321",
     "stock": "23",
     "id": 1,
-    "timestamp": 1665372935582
+    "timestamp": 1666062319985,
+    "productos": [
+      {
+        "nombre": "moto",
+        "descripcion": "celeste",
+        "codigo": "07714",
+        "foto": "image",
+        "precio": "12421",
+        "stock": "2",
+        "id": 1,
+        "timestamp": 1665365611646
+      },
+      {
+        "nombre": "moto",
+        "descripcion": "roja",
+        "codigo": "04274",
+        "foto": "image",
+        "precio": "4321",
+        "stock": "23",
+        "id": 2,
+        "timestamp": 1665365732365
+      }
+    ]
   },
   {
     "nombre": "orden 2",
-    "descripcion": "varios",
-    "codigo": "04274",
+    "descripcion": "hogar",
+    "codigo": "44567",
     "foto": "image",
-    "precio": "4321",
-    "stock": "23",
+    "precio": "5474",
+    "stock": "42",
     "id": 2,
-    "timestamp": 1665373626280
+    "timestamp": 1666062799073,
+    "productos": [
+      {
+        "nombre": "moto",
+        "descripcion": "roja",
+        "codigo": "04274",
+        "foto": "image",
+        "precio": "4321",
+        "stock": "23",
+        "id": 2,
+        "timestamp": 1665365732365
+      },
+      {
+        "nombre": "moto",
+        "descripcion": "celeste",
+        "codigo": "07714",
+        "foto": "image",
+        "precio": "12421",
+        "stock": "2",
+        "id": 1,
+        "timestamp": 1665365611646
+      }
+    ]
   }
 ]

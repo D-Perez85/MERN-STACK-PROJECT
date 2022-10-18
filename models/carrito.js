@@ -1,10 +1,10 @@
 const fs = require('fs');
+const {productos} = require('../controllers/productos/productos.api');
 
-class ContenedorProducto {
+class ContenedorCarrito {
     constructor(nombreArchivo) {
         this.nombreArchivo = nombreArchivo;
         this.objetos = this.readData();
-
     }
 
     //Guarda un objeto
@@ -12,10 +12,10 @@ class ContenedorProducto {
         try {
             objeto.id = await this.nuevoId();
             objeto.timestamp = Date.now();
+            objeto.productos = [];
             this.objetos.push(objeto);
-            // console.log(objeto);
             this.writeData();
-            return objeto;
+            return objeto.id;
         } catch (err) {
             console.log(err);
         }
@@ -50,7 +50,10 @@ class ContenedorProducto {
     editar(id, data) {
         const objetoAEditar = this.obtenerPorID(id);
         const index = this.objetos.findIndex(objetoActual => objetoActual.id === objetoAEditar.id);
-        this.objetos[index] = { ...this.objetos[index], ...data };
+        this.objetos[index] = {
+            ...this.objetos[index],
+            ...data
+        };
         this.writeData();
     }
     //Elimina el objeto deseado con el ID solicitado
@@ -77,6 +80,15 @@ class ContenedorProducto {
     async writeData() {
         await fs.promises.writeFile(this.nombreArchivo, JSON.stringify(this.objetos, null, 2));
     }
+    //Guarda un producto en un carrito
+    saveProduct = (idCarrito, idProducto) => {
+        let producto = productos.obtenerPorID(idProducto);
+        let carrito = this.obtenerPorID(idCarrito);
+        carrito.productos.push(producto);
+        this.writeData();
+        return idProducto;
+    };
+
 }
 
-module.exports = ContenedorProducto;
+module.exports = ContenedorCarrito;

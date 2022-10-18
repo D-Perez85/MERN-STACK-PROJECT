@@ -1,5 +1,5 @@
 const Contenedor = require('../../models/productos');
-const productos =  new Contenedor('./data/products.json')
+const productos =  new Contenedor('./data/products.json');
 
 //Crear Producto
 const crearProducto = (req, res) => {
@@ -32,4 +32,4 @@ const eliminarProducto = (req, res) => {
     res.status(200).json(`Producto eliminado`); 
 }
 
-module.exports = {crearProducto, obtenerProductos, editarProducto, eliminarProducto};
+module.exports = {crearProducto, obtenerProductos, editarProducto, eliminarProducto, productos};
