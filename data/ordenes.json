@@ -11,16 +11,6 @@
     "productos": [
       {
         "nombre": "moto",
-        "descripcion": "celeste",
-        "codigo": "07714",
-        "foto": "image",
-        "precio": "12421",
-        "stock": "2",
-        "id": 1,
-        "timestamp": 1665365611646
-      },
-      {
-        "nombre": "moto",
         "descripcion": "roja",
         "codigo": "04274",
         "foto": "image",

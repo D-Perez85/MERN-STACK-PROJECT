@@ -87,8 +87,19 @@ class ContenedorCarrito {
         carrito.productos.push(producto);
         this.writeData();
         return idProducto;
-    };
-
+    };  
+    //Borrar un producto en un carrito
+    deleteProduct = (idCarrito, idProducto) => {
+        try {
+            let carrito = this.obtenerPorID(idCarrito);
+            let indexABorrar = carrito.productos.findIndex(producto => producto.id === idProducto);
+            carrito.productos.splice(indexABorrar, 1);
+            this.writeData();
+            return idProducto; 
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 module.exports = ContenedorCarrito;

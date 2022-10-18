@@ -36,10 +36,14 @@ const addProducto = (req, res) => {
 	res.status(201).json({message: `PRODUCTO agregado al carro exitosamente`, producto})
 }
 
-
-//Eliminar un carro
+//Eliminar un producto del carro
 const borrarProducto = (req, res) => {
-    res.status(200).json({message: `PRODUCTO eliminado del carro exitosamente`})
+	const idCartSelected = Number(req.params.id);
+	const idProduct = Number(req.params.idProducto);
+	ordenes.deleteProduct(idCartSelected, idProduct);
+	const producto = productos.obtenerPorID(idProduct);
+	res.status(201).json({message: `PRODUCTO eliminado del carro exitosamente`, producto})
 }
-
 module.exports = { crearCarro, obtenerProductos, eliminarCarro, addProducto, borrarProducto};
+
+
